@@ -25,10 +25,10 @@ function displayResults(responseJson) {
   $('#results').removeClass('hidden');
 }
 
-function getNationalParkInfo(stateArr,limit=10) {
+function getNationalParkInfo(stateAbb,limit=10) {
   const params = {
     api_key: apiKey,
-    stateCode: stateArr,
+    stateCode: stateAbb,
     limit: limit-0,
      
   };
@@ -54,7 +54,7 @@ function watchForm() {
     event.preventDefault();
     const stateArr = $('#js-search-term').val().split(",");
     const limit = $('#js-max-results').val();
-    getNationalParkInfo(stateArr,limit);
+    getNationalParkInfo(stateAbb,limit);
   });
 }
 
